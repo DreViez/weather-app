@@ -28,19 +28,19 @@ const App = () => {
   }, [city, unit]);
 
   
-const formatBackground = () => {
-  // Check if weather information is not available (falsy)
-  if (!weather)
-      // If weather information is not available, return default background gradient
-      return "from-cyan-700 to-blue-700";
-  // If weather information is available
-  // Check if it's daytime based on the value of weather.is_day
-  return weather.is_day
-      // If it's daytime, return a background gradient from yellow to orange
-      ? "from-yellow-300 to-orange-600"
-      // If it's nighttime, return a default background gradient
-      : "from-cyan-700 to-blue-700";
-};
+  const formatBackground = () => {
+    // Check if weather information is not available (falsy)
+    if (!weather)
+        // If weather information is not available, return default background gradient
+        return "from-cyan-700 to-blue-700";
+    // If weather information is available
+    // Check if it's daytime based on the value of weather.is_day
+    return weather.is_day
+        // If it's daytime, return a background gradient from yellow to orange
+        ? "from-yellow-300 to-orange-600"
+        // If it's nighttime, return a default background gradient
+        : "from-cyan-700 to-blue-700";
+  };
   return (
     <div
     

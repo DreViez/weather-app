@@ -1,4 +1,3 @@
-// Main screen
 import React, { useState } from "react";
 import { GrLocation, GrSearch } from "react-icons/gr";
 
@@ -8,6 +7,12 @@ const Inputs = ({ setCity, unit, setUnit }) => {
   const handleCitySearch = () => {
     if (!cityInput) return;
     setCity(cityInput);
+  };
+//added use of enter key and not just button
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleCitySearch();
+    }
   };
 
   const handleLocationClick = () => {
@@ -31,6 +36,7 @@ const Inputs = ({ setCity, unit, setUnit }) => {
           className="text-xl text-gray-500 rounded-md font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
           value={cityInput}
           onChange={(e) => setCityInput(e.target.value)}
+          onKeyPress={handleKeyPress} // This line adds the key press event listener
         />
         <GrSearch
           onClick={handleCitySearch}
